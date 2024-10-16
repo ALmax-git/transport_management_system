@@ -1,7 +1,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <a href="#" class="logo d-flex align-items-center me-auto">
               <h1 class="sitename">Borno Express</h1>
           </a>
 
