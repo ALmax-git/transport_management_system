@@ -1,6 +1,6 @@
 /**
-* Template Name: Logis
-* Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
+* Template Name: Borno Express
+* Template URL: https://bootstrapmade.com/Borno Express-bootstrap-Borno Expresstics-website-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
