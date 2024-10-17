@@ -7,7 +7,8 @@
               <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                   <h2 data-aos="fade-up">Your Lightning Fast Transportation Partners</h2>
                   <p data-aos="fade-up" data-aos-delay="100">
-                      Welcome to Borno state transportation station, Travel with joy and satisfaction.
+                      Join us at Borno State's premier transportation station and experience travel like never before –
+                      with joy and satisfaction at every stop!
                       <?php echo $_GET['search'] ?? ''; ?>
                   </p>
 

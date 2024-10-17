@@ -6,7 +6,8 @@
                  <a href="index.html" class="logo d-flex align-items-center">
                      <span class="sitename">Borno Express</span>
                  </a>
-                 <p>Welcome to Yarwa, Home of peace. Enjoy the journey at Borno Express Transport Services.</p>
+                 <p>Join us at Borno State's premier transportation station and experience travel like never before –
+                     with joy and satisfaction at every stop!</p>
                  <div class="social-links d-flex mt-4">
                      <a href=""><i class="bi bi-twitter-x"></i></a>
                      <a href=""><i class="bi bi-facebook"></i></a>
