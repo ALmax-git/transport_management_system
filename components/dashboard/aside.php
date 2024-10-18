@@ -20,6 +20,15 @@
                 <li>
                     <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
+                <li>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Routes</a>
+                </li>
+                <li>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Tickets</a>
+                </li>
+                <li>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Passengers</a>
+                </li>
             </ul>
             <span class="system-menu__title">system</span>
             <ul class="sidebar-body-menu">

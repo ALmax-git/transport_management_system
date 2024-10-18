@@ -190,7 +190,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (darkMode === 'enabled') {
       enableDarkMode();
     }
-
+if (darkMode !== 'enabled') {
+          enableDarkMode();
+        }
     if (darkModeToggle) {
       darkModeToggle.addEventListener('click', function () {
         darkMode = localStorage.getItem('darkMode');
