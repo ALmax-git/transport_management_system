@@ -37,13 +37,14 @@ This is a simple login and registration system built in PHP for **Borno Express*
 
 The project is structured as follows:
 
- ```borno-express-auth-system/
+ ``` borno-express-auth-system/
 │
 ├── auth.php            # The main authentication file handling both login and registration
 ├── dashboard.php       # Dashboard page
-└── README.md           # Project documentation (this file)```
+└── README.md           # Project documentation (this file) 
+ ```
 
-# Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to improve the project or fix bugs:
 
