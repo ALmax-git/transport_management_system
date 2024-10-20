@@ -1,4 +1,4 @@
-# Borno Express Auth System
+# Borno Express Transportation
 
 This is a simple login and registration system built in PHP for **Borno Express**. The system allows users to create accounts and log in using their credentials. It uses **PHP** and **MySQL** for handling authentication.
 
