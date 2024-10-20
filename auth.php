@@ -6,19 +6,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Database connection (replace with your own credentials)
-$host = '127.0.0.1';
-$db = 'borno_express'; // Replace with your database
-$user = 'root';
-$pass = ''; // Set your database password
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+require_once __DIR__ . '/app/models/User.php';
 
-try {
-    $pdo = new PDO($dsn, $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
+require_once __DIR__ . '/database/Database.php';
+
+$database = new Database;
+$pdo = $database->pdo_connect();
+
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -36,8 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
             // Insert the user into the database
-            $stmt = $pdo->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-            if ($stmt->execute([$email, $hashed_password])) {
+            $user = new User($database->getConnection());
+            $user->email = $email;
+            $user->password = $hashed_password;
+            $user->create();
+            if ($user) {
                 $_SESSION['message'] = "Registration successful! Please log in.";
                 header("Location: auth.php");
                 exit;
