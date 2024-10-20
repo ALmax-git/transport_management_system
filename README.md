@@ -41,7 +41,7 @@ The project is structured as follows:
 │
 ├── auth.php            # The main authentication file handling both login and registration
 ├── dashboard.php       # Dashboard page
-└── README.md           # Project documentation (this file)
+└── README.md           # Project documentation (this file)```
 
 # Contributing
 
