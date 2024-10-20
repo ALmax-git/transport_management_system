@@ -18,16 +18,16 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                    <a class="active" href="./dashboard.php?index=1"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Routes</a>
+                    <a class="active" href="./dashboard.php?routes=1"><span class="icon home" aria-hidden="true"></span>Routes</a>
                 </li>
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Tickets</a>
+                    <a class="active" href="./dashboard.php?tickets"><span class="icon home" aria-hidden="true"></span>Tickets</a>
                 </li>
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Passengers</a>
+                    <a class="active" href="./dashboard.php?passengers"><span class="icon home" aria-hidden="true"></span>Passengers</a>
                 </li>
             </ul>
             <span class="system-menu__title">system</span>
