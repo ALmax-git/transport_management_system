@@ -1,5 +1,4 @@
-<?php
-// use /database/database.php;
+<?php 
 class User {
     private $conn;
 

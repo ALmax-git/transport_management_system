@@ -31,14 +31,16 @@ This is a simple login and registration system built in PHP for **Borno Express*
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/borno-express-auth-system.git```
+   git clone https://github.com/ALmax-git/transport_management_system.git
+   ```
 
 ## File Structure
 
 The project is structured as follows:
 
- ``` borno-express-auth-system/
-│
+ ```
+borno-express-auth-system/
+./
 ├── auth.php            # The main authentication file handling both login and registration
 ├── dashboard.php       # Dashboard page
 └── README.md           # Project documentation (this file) 

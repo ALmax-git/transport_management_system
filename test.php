@@ -12,7 +12,8 @@ $pdo = $database->pdo_connect();
 
 $users = new User($database->getConnection()); 
 $users = $users->read(); 
-
+$x = uniqid();
+echo $x;
 // Start of HTML table
 echo '<table>';
 
