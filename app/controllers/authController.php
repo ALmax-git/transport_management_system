@@ -5,15 +5,11 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../../database/Database.php';
-// require_once __DIR__ '../../app/models/User.php';
-
-// require_once __DIR__ . '../../database/Database.php';
-
 $database = new Database;
 $pdo = $database->pdo_connect();
-
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

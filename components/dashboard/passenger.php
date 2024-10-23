@@ -1,9 +1,9 @@
 <div class="card" style="margin:auto;">
 <div class="row">
-<form class="form" action="" method="post">
+<form class="form" action="./app/mainController.php" method="post">
    <label class="form-label-wrapper">
      <p class="form-label">Name</p>
-     <input class="form-input" type="text" name="name"  placeholder="Enter passenger name"required>
+     <input class="form-input" type="text" name="name"  placeholder="Enter passenger name" required>
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">Phone Number</p>
@@ -19,13 +19,13 @@
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">Age</p>
-     <input class="form-input" type="number" name="age" placeholder="Enter passenger age" required>
+     <input class="form-input" type="number" name="age" placeholder="Enter passenger age">
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">Address</p>
      <input class="form-input" type="text" name="address" placeholder="Enter your password" required>
    </label>
-   <button class="form-btn primary-default-btn transparent-btn">Generate Ticket</button>
+   <button class="form-btn primary-default-btn transparent-btn" name="generate_ticket">Generate Ticket</button>
 </form>
 </div>
 </div>
