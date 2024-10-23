@@ -20,10 +20,8 @@
                  <h4>Our Team</h4>
                  <ul>
                      <li><a href="#">Muhammad Tukur</a></li>
-                     <li><a href="#">Ali Musa</a></li>
-                     <li><a href="#">Aisha Musa</a></li>
-                     <li><a href="#">Usama bin ladan</a></li>
-                     <li><a href="#">Aliyu bin Ali</a></li>
+                     <li><a href="#">Yakubu Sanda</a></li>
+                     <li><a href="#">Umar Tijjani Mala</a></li>
                  </ul>
              </div>
 
@@ -31,20 +29,18 @@
                  <h4>Our Services</h4>
                  <ul>
                      <li><a href="#">Transportation</a></li>
-                     <li><a href="#">Package Delivery</a></li>
-                     <li><a href="#">Coria System</a></li>
-                     <li><a href="#">Marketing</a></li>
+                     <li><a href="#">Package Delivery</a></li> 
                      <li><a href="#">And more</a></li>
                  </ul>
              </div>
 
              <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                  <h4>Contact Us</h4>
-                 <p>A108 Adam Street</p>
-                 <p>New York, NY 535022</p>
-                 <p>United States</p>
-                 <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                 <p><strong>Email:</strong> <span>info@example.com</span></p>
+                 <p>Ramat Polytechnic</p>
+                 <p>Maiduguri Borno State</p>
+                 <p>Nigeria</p>
+                 <p class="mt-4"><strong>Phone:</strong> <span>+234 701 9341 193 </span></p>
+                 <p><strong>Email:</strong> <span>mtukur682@gmial.com</span></p>
              </div>
 
          </div>
