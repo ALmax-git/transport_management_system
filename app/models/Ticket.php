@@ -2,6 +2,7 @@
 class Ticket {
     private $conn;
 
+    public $table = 'tickets'; // Add this property to define the table
     // Properties 	 	 	 	 	 	
     public $id;
     public $ticket_id = "";

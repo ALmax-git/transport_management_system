@@ -2,6 +2,7 @@
 class Passenger {
     private $conn;
 
+    public $table = 'passengers'; // Add this property to define the table
     // Properties
     public $id;
     public $name = "";
@@ -62,7 +63,28 @@ class Passenger {
         $stmt->bind_param("ssssssssi", $this->name, $this->address, $this->phone_number, $this->gender, $this->age, $this->ticket_id, $this->emergency_contact, $this->first_contact_number, $this->id);
         return $stmt->execute();
     }
+    public function find($id) {
+        $query = "SELECT * FROM " . $this->table . " WHERE ticket_id = ? LIMIT 0,1";
 
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            // Set object properties
+            $this->name = $row['name'];
+            $this->address = $row['address'];
+            $this->phone_number = $row['phone_number'];
+            $this->gender = $row['gender'];
+            $this->age = $row['age'];
+            $this->ticket_id = $row['ticket_id'];
+            $this->emergency_number = $row['emergency_number'];
+            $this->first_contact_number = $row['first_contact_number'];
+            return true;
+        }
+        return false; // Return false if no record is found
+    }
     // Delete a passenger (soft delete)
     public function delete() {
         $query = "UPDATE passengers SET deleted_at = NOW() WHERE id = ?";
