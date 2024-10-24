@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../../auth.php");
             exit;
         }
-    }elseif (isset($_POST['logout']){
+    }elseif (isset($_POST['logout'])){
        session_unset();
     }
 }
