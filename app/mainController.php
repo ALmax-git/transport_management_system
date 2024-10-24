@@ -19,7 +19,7 @@ $departure = "Borno Express Maiduguri";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    if(isset($_POST['generate_ticket'])){
-      $key = uniqid(); // Fixed from $kay to $key
+      $key = uniqid(); 
       $status = "Success";
       $passenger = new Passenger($database->getConnection());
       
