@@ -44,10 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Create the ticket and passenger
       $ticket->create();
       $passenger->create();
-      
-      echo 100;
-      print_r($ticket);
-      print_r($passenger);
+      header("Location: ../dashboard.php?ticket=" . $ticket->ticket_id);
+      exit();
+
    } else {
       echo 911;
       $status = "Fail";

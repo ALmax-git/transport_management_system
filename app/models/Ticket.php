@@ -57,6 +57,26 @@ public function create() {
         $stmt->execute();
         return $stmt->get_result();
     }
+    public function find($id) {
+        $query = "SELECT * FROM " . $this->table . " WHERE ticket_id = ? LIMIT 0,1";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            // Set object properties
+            $this->ticket_id = $row['ticket_id'];
+            $this->vehicle_id = $row['vehicle_id'];
+            $this->emergency_contact = $row['emergency_contact'];
+            $this->status = $row['status'];
+            $this->destination = $row['destination'];
+            $this->departure = $row['departure'];
+            return true;
+        }
+        return false; // Return false if no record is found
+    }
 
     // Update a ticket
     public function update() {
