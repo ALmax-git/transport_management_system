@@ -11,7 +11,7 @@
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">Emergency Number</p>
-     <input class="form-input" type="tel" name="emergency_number" placeholder="Enter emergency number" required>
+     <input class="form-input" type="tel" name="emergency_contact" placeholder="Enter emergency number" required>
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">First Contact</p>
@@ -24,6 +24,10 @@
    <label class="form-label-wrapper">
      <p class="form-label">Address</p>
      <input class="form-input" type="text" name="address" placeholder="Enter your password" required>
+   </label>
+   <label class="form-label-wrapper">
+     <p class="form-label">Destination</p>
+     <input class="form-input" type="text" name="destination" placeholder="Enter your destination" required>
    </label>
    <button class="form-btn primary-default-btn transparent-btn" name="generate_ticket">Generate Ticket</button>
 </form>

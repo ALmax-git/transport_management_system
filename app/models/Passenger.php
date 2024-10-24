@@ -13,7 +13,7 @@ class Passenger {
     public $updated_at;
     public $deleted_at;
     public $ticket_id;
-    public $emergency_contact = "";
+    public $emergency_number = "";
     public $first_contact_number = "";
 
     // Constructor with database connection
@@ -24,7 +24,7 @@ class Passenger {
     // Create a new passenger
     public function create() {
         $query = "INSERT INTO passengers 
-                  (name, address, phone_number, gender, age, ticket_id, emergency_contact, first_contact_number)
+                  (name, address, phone_number, gender, age, ticket_id, emergency_number, first_contact_number)
                   VALUES 
                   (?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -36,7 +36,7 @@ class Passenger {
               $this->phone_number, 
               $this->gender, $this->age, 
               $this->ticket_id, 
-              $this->emergency_contact, 
+              $this->emergency_number, 
               $this->first_contact_number
          );
 

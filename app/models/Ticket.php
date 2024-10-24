@@ -6,11 +6,10 @@ class Ticket {
     public $id;
     public $ticket_id = "";
     public $vehicle_id = '';
-    public $ticket_id = '';
     public $emergency_contact;
     public $status;
-    public $created_at = now();
-    public $updated_at = now();
+    public $created_at ;
+    public $updated_at ;
     public $deleted_at;
     public $destination;
     public $departure = "Borno Express Maiduguri";
@@ -20,30 +19,36 @@ class Ticket {
         $this->conn = $db;
     }
 
-    // Create a new ticket
-    public function create() {
-        $query = "INSERT INTO tickets 
-                  (ticket_id, vehicle_id, emergency_contact, status, destination, departure)
-                  VALUES 
-                  (?, ?, ?, ?, ?, ?)";
+  // Create a new ticket
+public function create() {
+    $query = "INSERT INTO tickets 
+              (ticket_id, vehicle_id, emergency_contact, status, destination, departure)
+              VALUES 
+              (?, ?, ?, ?, ?, ?)";
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param(
-              "ssssssss", 
-              $this->ticket_id, 
-              $this->vehicle_id, 
-              $this->emergency_contact, 
-              $this->status, 
-              $this->destination, 
-              $this->departure, 
-         );
+    // Prepare the statement
+    $stmt = $this->conn->prepare($query);
+    
+    // Assuming vehicle_id is an integer, the correct types should be 'sissss'
+    $stmt->bind_param(
+        "sissss", 
+        $this->ticket_id, 
+        $this->vehicle_id, 
+        $this->emergency_contact, 
+        $this->status, 
+        $this->destination, 
+        $this->departure
+    );
 
-        if ($stmt->execute()) {
-            return true;
-        }
-
-        return false;
+    // Execute the query
+    if ($stmt->execute()) {
+        return true;
     }
+
+    // Return false if the execution failed
+    return false;
+}
+
 
     // Read all tickets
     public function read() {
