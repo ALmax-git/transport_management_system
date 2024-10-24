@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $status = "Success";
       $passenger = new Passenger($database->getConnection());
       
-      $ticket = new Ticket($database->getConnection()); // Class name fix, case-sensitive
+      $ticket = new Ticket($database->getConnection()); 
       $ticket->vehicle_id = 1;
       $ticket->emergency_contact = $_POST['emergency_contact'];
       $ticket->status = $status ?? "Success";
