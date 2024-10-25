@@ -87,7 +87,7 @@
                       <li>
                           <form method="POST" action="app/controllers/authController.php" class="danger">
                               <i data-feather="log-out" aria-hidden="true"></i>
-                              <button type="submit">Log out</button>
+                              <button type="submit" class="btn btn-danger">Log out</button>
                           </form>
                      </li>
                   </ul>
