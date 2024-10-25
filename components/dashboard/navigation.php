@@ -84,10 +84,12 @@
                               <i data-feather="settings" aria-hidden="true"></i>
                               <span>Account settings</span>
                           </a></li>
-                      <li><a class="danger" href="##">
+                      <li>
+                          <form method="POST" action="app/controllers/authController.php" class="danger">
                               <i data-feather="log-out" aria-hidden="true"></i>
-                              <span>Log out</span>
-                          </a></li>
+                              <button type="submit">Log out</button>
+                          </form>
+                     </li>
                   </ul>
               </div>
           </div>
