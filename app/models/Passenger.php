@@ -67,7 +67,7 @@ class Passenger {
         $query = "SELECT * FROM " . $this->table . " WHERE ticket_id = ? LIMIT 0,1";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $id);
+        $stmt->bind_param("s", $id);
         $stmt->execute();
         
         $result = $stmt->get_result();
