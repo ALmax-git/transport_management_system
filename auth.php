@@ -96,7 +96,7 @@
             </div>
         <?php elseif ($_GET['action'] == 'register'): ?>
             <h2>Register</h2>
-            <form method="POST"  action="app/controllers/authController.php">>
+            <form method="POST"  action="app/controllers/authController.php">
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required>
