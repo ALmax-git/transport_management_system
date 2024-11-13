@@ -22,6 +22,13 @@
      <input class="form-input" type="number" name="age" placeholder="Enter passenger age">
    </label>
    <label class="form-label-wrapper">
+     <p class="form-label">Gender</p>
+     <select class="form-input"  name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+     </select>
+   </label>
+   <label class="form-label-wrapper">
      <p class="form-label">Address</p>
      <input class="form-input" type="text" name="address" placeholder="Enter your password" required>
    </label>

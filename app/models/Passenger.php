@@ -35,7 +35,8 @@ class Passenger {
               $this->name, 
               $this->address, 
               $this->phone_number, 
-              $this->gender, $this->age, 
+              $this->gender,
+              $this->age,
               $this->ticket_id, 
               $this->emergency_number, 
               $this->first_contact_number
