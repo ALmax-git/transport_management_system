@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $passenger->ticket_id = $key;
       $ticket->ticket_id = $key;
       
-      $passenger->name = $_POST['name'];
+      $passenger->name = $_POST['title'] . " " . $_POST['name'];
       $passenger->address = $_POST['address'];
       $passenger->phone_number = $_POST['phone_number'];
       $passenger->gender = $_POST['gender'] ?? "Human";
