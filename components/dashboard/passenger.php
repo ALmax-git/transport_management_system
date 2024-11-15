@@ -28,8 +28,8 @@
      <input class="form-input" type="tel" name="first_contact_number" placeholder="Enter first contact number" required>
    </label>
    <label class="form-label-wrapper">
-     <p class="form-label">Date of Birth</p>
-     <input class="form-input" type="date" name="age" placeholder="Enter passenger age">
+     <p class="form-label">Age</p>
+     <input class="form-input" type="number" name="age" placeholder="Enter passenger age">
    </label>
    <label class="form-label-wrapper">
      <p class="form-label">Gender</p>
