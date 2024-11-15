@@ -1,4 +1,4 @@
-<?php 
+<?php
 // 127.0.0.1/components/dashboard/index.php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -13,7 +13,10 @@ $pdo = $database->pdo_connect();
 
 $ticket = new Ticket($database->getConnection());
 $passenger = new Passenger($database->getConnection());
-if ($ticket->find($_GET['ticket'])) {
+$all_ticket = $ticket->read();
+$_GET['ticket'] = isset($_GET['ticket']) ? $_GET['ticket'] : '';
+
+if ($_GET['ticket'] != '' && $ticket->find($_GET['ticket'])) {
     echo '
     <div class="row stat-cards">
        <div class="col">
@@ -30,15 +33,15 @@ if ($ticket->find($_GET['ticket'])) {
                <span class="stat-cards-info__profit success">
                  <i data-feather="trending-up" aria-hidden="true"></i>' . $ticket->status . ' ' . $ticket->created_at .'
                </span>
-               
+
              </p>
            </div>
          </article>
        </div>
       </div>
     ';
-    
-    
+
+
     if ($passenger->find($_GET['ticket'])) {
     echo '
     <div class="row stat-cards">
@@ -56,7 +59,7 @@ if ($ticket->find($_GET['ticket'])) {
                <span class="stat-cards-info__profit success">
                  <i data-feather="trending-up" aria-hidden="true"></i>' . $ticket->created_at .'
                </span>
-               
+
              </p>
            </div>
          </article>

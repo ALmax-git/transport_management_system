@@ -37,7 +37,7 @@
                              include './components/dashboard/passenger.php';
                              //echo 2;
                            }
-                           elseif(isset($_GET['ticket'])){
+                           elseif(isset($_GET['tickets'])){
                              include './components/dashboard/ticket.php';
                              //echo 2;
                            }

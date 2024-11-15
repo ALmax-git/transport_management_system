@@ -16,9 +16,9 @@
                         <input type="checkbox" class="check-all">S/N
                       </label>
                     </th>
-                    <th>Email</th>
                     <th>Name</th>
-                    <th>Status</th>
+                    <th>Phone Number</th>
+                    <th>Gender</th>
                     <th>Date</th>
                     <th>Action</th>
                   </tr>
@@ -30,16 +30,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../../app/models/User.php'; // Corrected the path
+require_once __DIR__ . '/../../app/models/Passenger.php'; // Corrected the path
 require_once __DIR__ . '/../../database/Database.php'; // Corrected the path
 
 $database = new Database;
 $pdo = $database->pdo_connect();
 
-$users = new User($database->getConnection()); 
-$users = $users->read(); 
+$Passenger = new Passenger($database->getConnection());
+$passengers = $Passenger->read();
 $count = 0;
-foreach($users as $user){
+// print_r($passengers);
+foreach($passengers as $user){
   // Template row with dynamic data
   echo '<tr>';
   echo '  <td>';
@@ -54,17 +55,17 @@ foreach($users as $user){
   echo '      </div>';
   echo '    </label>';
   echo '  </td>';
-  echo '  <td>' . htmlspecialchars($user['email']) . '</td>'; // Replace with actual field
+  echo '  <td>' . htmlspecialchars($user['name']) . '</td>'; // Replace with actual field
   echo '  <td>';
   echo '    <div class="pages-table-img">';
  // echo '      <picture>';
  // echo '        <source srcset="./assets/img/avatar/avatar-face-04.webp" type="image/webp">';
  // echo '        <img src="./assets/img/avatar/avatar-face-04.png" alt="' . htmlspecialchars($user['name']) . '">';
  // echo '      </picture>';
-  echo '      ' . htmlspecialchars($user['name']);
+  echo '      ' . htmlspecialchars($user['phone_number']);
   echo '    </div>';
   echo '  </td>';
-  echo '  <td><span class="badge-pending">' . htmlspecialchars($user['status']) . '</span></td>'; // Replace with actual status field
+  echo '  <td><span class="badge-pending">' . htmlspecialchars($user['gender']) . '</span></td>'; // Replace with actual status field
   echo '  <td>' . htmlspecialchars($user['created_at']) . '</td>'; // Replace with actual date field
   echo '  <td>';
   echo '    <span class="p-relative">';
