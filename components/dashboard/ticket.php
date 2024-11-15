@@ -17,7 +17,7 @@ $passenger = new Passenger($database->getConnection());
 
 // Retrieve all tickets
 $all_ticket = $ticket->read();
-$ticketId = isset($_GET['ticket']) ? htmlspecialchars($_GET['ticket']) : '';
+$ticketId = isset($_GET['tickets']) ? htmlspecialchars($_GET['tickets']) : '';
 // echo '<div class="row">';
 function displayTicketInfo($ticket, $passenger = null) {
     // print_r($ticket);
@@ -38,7 +38,7 @@ function displayTicketInfo($ticket, $passenger = null) {
                <span class="stat-cards-info__profit success">
                  <i data-feather="trending-up" aria-hidden="true"></i>' . $ticket->status . ' ' . $ticket->created_at . '
                </span>
-             </p>
+             </p><p><br></p>
            </div>
          </article>
        </div>
@@ -49,18 +49,14 @@ function displayTicketInfo($ticket, $passenger = null) {
         <div class="col-6" style="margin-bottom:8px;">
            <div class="" >
              <article class="stat-cards-item">
-               <div class="stat-cards-icon primary">
-                 <i data-feather="file" aria-hidden="true"></i>
-               </div>
                <div class="stat-cards-info">
              <p class="stat-cards-info__num">Passenger</p>
-                 <p class="stat-cards-info__num">Emergency Contact: ' . $passenger->emergency_number . '</p>
                  <p class="stat-cards-info__title">Name: ' . $passenger->name . '</p>
                  <p class="stat-cards-info__title">Phone Number: ' . $passenger->phone_number . '</p>
+                 <p class="stat-cards-info__title">Emergency Contact: ' . $passenger->emergency_number . '</p>
                  <p class="stat-cards-info__title">Address: ' . $passenger->address . '</p>
                  <p class="stat-cards-info__progress">
-                   <span class="stat-cards-info__profit success">
-                     <i data-feather="trending-up" aria-hidden="true"></i>' . $passenger->created_at . '
+                   <span class="stat-cards-info__profit success">' . $passenger->created_at . '
                    </span>
                  </p>
                </div>
@@ -77,21 +73,18 @@ if ($ticketId && $ticket->find($ticketId)) {
 } else {
     // Display all tickets
     foreach ($all_ticket as $ticketData) {
-        $ticket->find($ticketData['id']);
-        $passenger->find($ticket->ticket_id);
-        displayTicketInfo($ticket, $passenger);
+// echo "<hr>";
+// print_r($ticketData);
+// echo "<hr>";
+ // print_r($ticketData['ticket_id']);
+// echo "<hr>";
+       $ticket->find($ticketData['ticket_id']);
+ // print_r($ticket);
+       $passenger->find($ticket->ticket_id);
+
+      displayTicketInfo($ticket, $passenger);
     }
 }
 
-if ($ticketId && $ticket->find($ticketId)) {
-    $passenger->find($ticketId);
-    displayTicketInfo($ticket, $passenger);
-} else {
-    // Display all tickets
-    foreach ($all_ticket as $ticketData) {
-        $ticket->find($ticketData['id']);
-        $passenger->find($ticket->ticket_id);
-        displayTicketInfo($ticket, $passenger);
-    }
-}
+
 ?>
