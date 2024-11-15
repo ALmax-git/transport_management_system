@@ -13,7 +13,7 @@ class Ticket {
     public $updated_at ;
     public $deleted_at;
     public $destination;
-    public $departure = "Borno Express Maiduguri";
+    public $departure; //= "Borno Express Maiduguri";
 
     // Constructor with database connection
     public function __construct($db) {
@@ -64,7 +64,7 @@ public function create() {
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("s", $id);
         $stmt->execute();
-        
+
         $result = $stmt->get_result();
         if ($row = $result->fetch_assoc()) {
             // Set object properties
@@ -74,7 +74,8 @@ public function create() {
             $this->status = $row['status'];
             $this->destination = $row['destination'];
             $this->departure = $row['departure'];
-            return true;
+            $this->created_at = $row['created_at'];
+            return $this;
         }
         return false; // Return false if no record is found
     }

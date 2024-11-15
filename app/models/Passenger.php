@@ -82,6 +82,7 @@ class Passenger {
             $this->ticket_id = $row['ticket_id'];
             $this->emergency_number = $row['emergency_number'];
             $this->first_contact_number = $row['first_contact_number'];
+            $this->created_at = $row['created_at'];
             return true;
         }
         return false; // Return false if no record is found

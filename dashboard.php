@@ -9,6 +9,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
+
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
@@ -27,7 +28,7 @@
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
                     <h2 class="main-title">Dashboard</h2>
-                    <div class="row stat-cards">
+                    <div class="row">
                         <?php
                            if(isset($_GET['routes'])){
                              include './components/dashboard/route.php';
