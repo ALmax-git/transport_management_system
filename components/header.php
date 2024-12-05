@@ -7,9 +7,9 @@
 
           <nav id="navmenu" class="navmenu">
               <ul>
-                  <li><a href="#" class="active">Home<br></a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="./" class="active">Home<br></a></li>
+                  <li><a href="./?about=true">About</a></li>
+                  <li><a href="./?contact=true">Contact</a></li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>

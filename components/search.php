@@ -14,9 +14,9 @@
 
                   <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                       data-aos-delay="200">
-                      <input type="text" class="form-control" name="search"
+                      <input type="text" class="form-control" name="search" id="searchInput" 
                           placeholder="Where do plan to go... e.g kano">
-                      <button type="submit" class="btn btn-primary">Search</button>
+                      <a href="#tableBody" class="btn btn-primary">Search</a>
                   </form>
 
                   <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">

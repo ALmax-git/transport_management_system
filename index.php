@@ -30,58 +30,8 @@
         <main class="main">
             <?php include './components/search.php'; ?>
 
-
-            <!-- Featured Services Section -->
-            <section id="featured-services" class="featured-services section">
-
-                <div class="container">
-
-                    <div class="row gy-4">
-
-                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon flex-shrink-0"><i class="fa-solid fa-bus"></i></div>
-                            <div>
-                                <h4 class="title">Express Intercity Travel</h4>
-                                <p class="description">Our fast and reliable intercity buses ensure you reach your
-                                    destination on time, with top-notch comfort and safety.</p>
-                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Service Item -->
-
-                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon flex-shrink-0"><i class="fa-solid fa-route"></i></div>
-                            <div>
-                                <h4 class="title">Customized Trip Routes</h4>
-                                <p class="description">Select from a variety of tailored routes that best suit your
-                                    travel needs, offering scenic views and optimized for shorter travel time.</p>
-                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Service Item -->
-
-                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-loading"></i></div>
-                            <div>
-                                <h4 class="title">Cargo & Logistics</h4>
-                                <p class="description">Transport goods with ease using our efficient cargo services.
-                                    From small packages to large deliveries, we’ve got you covered.</p>
-                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- End Service Item -->
-
-                    </div>
-
-
-                </div>
-
-            </section><!-- /Featured Services Section -->
-
-            <!-- About Section -->
+<?php if(isset($_GET['about']) && $_GET['about'] == "true"): ?>
+    <!-- About Section -->
             <section id="about" class="about section">
 
                 <div class="container">
@@ -232,7 +182,247 @@
 
 
             </section><!-- /Services Section -->
+            
+<?php elseif(isset($_GET['contact']) && $_GET['contact'] == "true"): ?>
+ <!-- Contact Section -->
+    <section id="contact" class="contact section">
 
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+<?php else: ?> 
+            <!-- Featured Services Section -->
+            <section id="featured-services" class="featured-services section">
+
+                <div class="container">
+
+                    <div class="row gy-4">
+
+                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon flex-shrink-0"><i class="fa-solid fa-bus"></i></div>
+                            <div>
+                                <h4 class="title">Express Intercity Travel</h4>
+                                <p class="description">Our fast and reliable intercity buses ensure you reach your
+                                    destination on time, with top-notch comfort and safety.</p>
+                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- End Service Item -->
+
+                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon flex-shrink-0"><i class="fa-solid fa-route"></i></div>
+                            <div>
+                                <h4 class="title">Customized Trip Routes</h4>
+                                <p class="description">Select from a variety of tailored routes that best suit your
+                                    travel needs, offering scenic views and optimized for shorter travel time.</p>
+                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- End Service Item -->
+
+                        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-loading"></i></div>
+                            <div>
+                                <h4 class="title">Cargo & Logistics</h4>
+                                <p class="description">Transport goods with ease using our efficient cargo services.
+                                    From small packages to large deliveries, we’ve got you covered.</p>
+                                <a href="#" class="readmore stretched-link"><span>Learn More</span><i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- End Service Item -->
+
+                    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<style>
+  .status-green {
+      background-color: green;
+      color: white;
+      cursor: pointer;
+  }
+  .status-red {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+  }
+</style>
+<table class="table table-striped table-bordered" id="hospitalTable">
+   <thead class="table-primary">
+       <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Departure</th>
+           <th>Destination</th>
+           <th>Status</th>
+           <th>Comments</th>
+       </tr>
+   </thead>
+   <tbody id="tableBody">
+       <!-- Rows will be dynamically generated -->
+   </tbody>
+</table>
+    <script>
+        // Define 20 routes in an array
+        const routes = [
+            { id: 1, name: "Route 1", departure: "Borno Express", destination: "Kano", status: "Available", comments: "Good service" },
+            { id: 2, name: "Route 2", departure: "Borno Express", destination: "Damaturu", status: "Not Available", comments: "Temporarily suspended" },
+            { id: 3, name: "Route 3", departure: "Borno Express", destination: "Wudil", status: "Available", comments: "On schedule" },
+            { id: 4, name: "Route 4", departure: "Borno Express", destination: "Katsina", status: "Available", comments: "Safe and secure" },
+            { id: 5, name: "Route 5", departure: "Borno Express", destination: "Gombe", status: "Not Available", comments: "Maintenance required" },
+            { id: 6, name: "Route 6", departure: "Borno Express", destination: "Zamfara", status: "Available", comments: "Popular route" },
+            { id: 7, name: "Route 7", departure: "Borno Express", destination: "Bauchi", status: "Not Available", comments: "Road repairs ongoing" },
+            { id: 8, name: "Route 8", departure: "Borno Express", destination: "Azare", status: "Available", comments: "Reliable service" },
+            { id: 9, name: "Route 9", departure: "Borno Express", destination: "Kano", status: "Available", comments: "Fast and efficient" },
+            { id: 10, name: "Route 10", departure: "Borno Express", destination: "Sokoto", status: "Not Available", comments: "No recent trips" },
+            { id: 11, name: "Route 11", departure: "Borno Express", destination: "Kaduna", status: "Available", comments: "Well-maintained" },
+            { id: 12, name: "Route 12", departure: "Borno Express", destination: "Abuja", status: "Available", comments: "Customer favorite" },
+            { id: 13, name: "Route 13", departure: "Borno Express", destination: "Patiskum", status: "Available", comments: "Great experience" },
+            { id: 14, name: "Route 14", departure: "Borno Express", destination: "Jos", status: "Not Available", comments: "Weather issues" },
+            { id: 15, name: "Route 15", departure: "Borno Express", destination: "Yola", status: "Available", comments: "Smooth trip" },
+            { id: 16, name: "Route 16", departure: "Borno Express", destination: "Bauchi", status: "Available", comments: "Frequent departures" },
+            { id: 17, name: "Route 17", departure: "Borno Express", destination: "Jigawa", status: "Available", comments: "High demand" },
+            { id: 18, name: "Route 18", departure: "Borno Express", destination: "Zamfara", status: "Not Available", comments: "Driver shortage" },
+            { id: 19, name: "Route 19", departure: "Borno Express", destination: "Kaduna", status: "Available", comments: "Reliable service" },
+            { id: 20, name: "Route 20", departure: "Borno Express", destination: "Zariya", status: "Not Available", comments: "Low patronage" }
+        ];
+
+        // Populate table with routes
+        function populateTable() {
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = ""; // Clear table body
+            routes.forEach(route => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${route.id}</td>
+                    <td>${route.name}</td>
+                    <td>${route.departure}</td>
+                    <td>${route.destination}</td>
+                    <td class="${route.status === 'Available' ? 'bg-success' : 'bg-danger'}" 
+                        onclick="showDetails('${route.name}', '${route.status}', '${route.departure} to ${route.destination}')">
+                        ${route.status}
+                    </td>
+                    <td>${route.comments}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Filter table rows based on search input
+        document.getElementById('searchInput').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase();
+            const filteredRoutes = routes.filter(route =>
+                route.name.toLowerCase().includes(filter) ||
+                route.departure.toLowerCase().includes(filter) ||
+                route.destination.toLowerCase().includes(filter)
+            );
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = ""; // Clear table body
+            filteredRoutes.forEach(route => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${route.id}</td>
+                    <td>${route.name}</td>
+                    <td>${route.departure}</td>
+                    <td>${route.destination}</td>
+                    <td class="${route.status === 'Available' ? 'bg-success' : 'bg-danger'}" 
+                        onclick="showDetails('${route.name}', '${route.status}', '${route.departure} to ${route.destination}')">
+                        ${route.status}
+                    </td>
+                    <td>${route.comments}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        });
+
+        // Show SweetAlert popup for status details
+        function showDetails(route, status, details) {
+            swal({
+                title: `Details for ${route}`,
+                text: `Status: ${status}\nDetails: ${details}`,
+                icon: status === 'Available' ? 'success' : 'error',
+            });
+        }
+
+        // Initialize table
+        populateTable();
+    </script>
+                </div>
+
+            </section><!-- /Featured Services Section -->
+
+        
             <!-- Call To Action Section -->
             <!-- Call To Action Section -->
             <section id="call-to-action" class="call-to-action section dark-background">
@@ -336,7 +526,7 @@
                 </div>
 
             </section><!-- /Faq Section -->
-
+<?php endif; ?>
 
         </main>
 
