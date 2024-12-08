@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }elseif (isset($_POST['logout'])){
        session_unset();
-       header("Location: ../../");
+       header("Location: ../../index.php");
     }
 }
 ?>

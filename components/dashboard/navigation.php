@@ -85,9 +85,9 @@
                               <span>Account settings</span>
                           </a></li>
                       <li>
-                          <form method="POST" action="app/controllers/authController.php" class="danger">
+                          <form method="post" action="app/controllers/authController.php" class="danger">
                               <i data-feather="log-out" aria-hidden="true"></i>
-                              <button type="submit" class="btn btn-danger">Log out</button>
+                              <button type="submit" name="logout" class="btn btn-danger">Log out</button>
                           </form>
                      </li>
                   </ul>

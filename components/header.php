@@ -19,20 +19,47 @@
 
       </div>
   </header>
+
+            <?php
+            require_once __DIR__ . '/../app/models/Vehicle.php';
+            require_once __DIR__ . '/../app/models/Passenger.php';
+            require_once __DIR__ . '/../app/models/User.php';
+            require_once __DIR__ . '/../app/models/Ticket.php';
+            require_once __DIR__ . '/../database/Database.php';
+$database = new Database;
+$pdo = $database->PDO_connect();
+
+                if (isset($_POST['login'])) {
+                 // Login logic
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+                    $stmt->execute([$email]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($user && password_verify($password, $user['password'])) {
+                        $_SESSION['user'] = $user['email'];
+                // echo '<script>alert(22);</script>';
+                        // header("Location: ../../dashboard.php"); // Redirect to a secure page
+                        // exit;
+                    } else {
+                        $_SESSION['message'] = "Invalid email or password!";
+                        // header("Location: ../../auth.php");
+                // echo '<script>alert(111);</script>';
+                        // exit;
+                    }
+                }
+                ?>
 <div class="modal fade" id="open_manipest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="open_manipestLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="open_manipestLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="open_manipestLabel">Root</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?php if(!isset($_SESSION['user'])): ?>
+        <?php if(isset($_SESSION['user'])): ?>
            <?php
-            require_once __DIR__ . '/../app/models/Vehicle.php';
-            require_once __DIR__ . '/../app/models/Passenger.php';
-            require_once __DIR__ . '/../app/models/Ticket.php';
-            require_once __DIR__ . '/../database/Database.php';
 
             // Database connection
             $database = new Database();
@@ -97,8 +124,8 @@
                 <?php endforeach;?>
             </div>
         <?php else: ?>
-            <form method="POST" action="">
-                <div id="emailHelp" class="text-danger">Require Authetication!</div>
+            <form method="POST">
+                <div id="emailHelp" class="text-danger"><?php echo $_SESSION['message'] ?? "Require Authetication!";?></div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -107,13 +134,9 @@
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="login"   class="btn btn-primary">Submit</button>
             </form>                
         <?php endif; ?> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>
