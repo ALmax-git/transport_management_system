@@ -41,11 +41,24 @@
 
    <label class="form-label-wrapper">
      <p class="form-label">Select Vehicle</p>
-     <select class="form-input"  name="gender">
+     <select class="form-input"  name="vehicle_id">
       <?php
-        $vehicles = [];
+      ini_set('display_errors', 1);
+      ini_set('display_startup_errors', 1);
+      error_reporting(E_ALL);
+
+      require_once __DIR__ . '/../../app/models/Vehicle.php';
+      require_once __DIR__ . '/../../app/models/Passenger.php';
+      require_once __DIR__ . '/../../app/models/Ticket.php';
+      require_once __DIR__ . '/../../database/Database.php';
+
+        // Database connection
+      $database = new Database();
+      $vehicles = new Vehicle($database->getConnection());
+      $vehicles = $vehicles->all();
+
         foreach ($vehicles as $vehicle) {
-           echo"<option value=" . $vehicle->id . ">" . $vehicle->name . "</option>";
+           echo"<option value=" . $vehicle['id'] . "><div style='display:flex;justify-content:space-between;'><p>" . $vehicle['name'] . "</p>  -  <p>" . $vehicle['vehicle_number'] . "</p></option>";
         }
       ?>
      </select>

@@ -18,7 +18,7 @@ $passenger = new Passenger($database->getConnection());
 
 // Retrieve all tickets
 $all_ticket = $ticket->read();
-$ticketId = isset($_GET['tickets']) ? htmlspecialchars($_GET['tickets']) : '';
+$ticketId = isset($_GET['ticket']) ? htmlspecialchars($_GET['ticket']) : '';
 
 // Function to display ticket and passenger information
 function displayTicketInfo($ticket, $passenger = null) {

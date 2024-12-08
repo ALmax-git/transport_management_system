@@ -35,6 +35,7 @@ CREATE TABLE `vehicles` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `vehicle_number` varchar(222) NOT NULL,
   `capacity` varchar(222) NOT NULL,
+  `type` varchar(222) NOT NULL,
   `model` varchar(222) NOT NULL,
   `driver_name` varchar(222) NOT NULL,
   `driver_contact` varchar(222) DEFAULT NULL,

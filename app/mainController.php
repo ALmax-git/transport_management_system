@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $passenger = new Passenger($database->getConnection());
       
       $ticket = new Ticket($database->getConnection()); 
-      $ticket->vehicle_id = 1;
+      $ticket->vehicle_id = $_POST['vehicle_id'];
       $ticket->emergency_contact = $_POST['emergency_contact'];
       $ticket->status = $status ?? "Success";
       $ticket->destination = $_POST['destination'];
