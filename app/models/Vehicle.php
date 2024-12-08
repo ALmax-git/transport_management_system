@@ -1,96 +1,90 @@
 <?php
-class Ticket {
+class Vehicle {
     private $conn;
 
-    public $table = 'tickets'; // Add this property to define the table
+    public $table = 'vehicles'; // Add this property to define the table
     // Properties
     public $id;
-    public $ticket_id = "";
-    public $vehicle_id = '';
-    public $emergency_contact;
+    public $vehicle_number;
+    public $capacity;
+    public $model;
+    public $driver_name;
+    public $driver_contact;
     public $status;
-    public $created_at ;
-    public $updated_at ;
+    public $created_at;
+    public $updated_at;
     public $deleted_at;
-    public $destination;
-    public $departure; //= "Borno Express Maiduguri";
 
     // Constructor with database connection
     public function __construct($db) {
         $this->conn = $db;
     }
 
-  // Create a new ticket
-public function create() {
-    $query = "INSERT INTO tickets
-              (ticket_id, vehicle_id, emergency_contact, status, destination, departure)
-              VALUES
-              (?, ?, ?, ?, ?, ?)";
+    // Create a new vehicle
+    public function create() {
+        $query = "INSERT INTO vehicles
+                  (vehicle_number, capacity, driver_name, driver_contact, status)
+                  VALUES
+                  (?, ?, ?, ?, ?)";
 
-    // Prepare the statement
-    $stmt = $this->conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param(
+            "sisss",
+            $this->vehicle_number,
+            $this->capacity,
+            $this->driver_name,
+            $this->driver_contact,
+            $this->status
+        );
 
-    // Assuming vehicle_id is an integer, the correct types should be 'sissss'
-    $stmt->bind_param(
-        "sissss",
-        $this->ticket_id,
-        $this->vehicle_id,
-        $this->emergency_contact,
-        $this->status,
-        $this->destination,
-        $this->departure
-    );
+        if ($stmt->execute()) {
+            return true;
+        }
 
-    // Execute the query
-    if ($stmt->execute()) {
-        return true;
+        return false;
     }
 
-    // Return false if the execution failed
-    return false;
-}
-
-
-    // Read all tickets
+    // Read all vehicles
     public function read() {
-        $query = "SELECT * FROM tickets WHERE deleted_at IS NULL";
+        $query = "SELECT * FROM vehicles WHERE deleted_at IS NULL";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->get_result();
     }
+
+    // Find a vehicle by ID
     public function find($id) {
-        $query = "SELECT * FROM " . $this->table . " WHERE ticket_id = ? LIMIT 0,1";
+        $query = "SELECT * FROM " . $this->table . " WHERE id = ? LIMIT 0,1";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("s", $id);
+        $stmt->bind_param("i", $id);
         $stmt->execute();
 
         $result = $stmt->get_result();
         if ($row = $result->fetch_assoc()) {
             // Set object properties
-            $this->ticket_id = $row['ticket_id'];
-            $this->vehicle_id = $row['vehicle_id'];
-            $this->emergency_contact = $row['emergency_contact'];
+            $this->vehicle_number = $row['vehicle_number'];
+            $this->capacity = $row['capacity'];
+            $this->driver_name = $row['driver_name'];
+            $this->driver_contact = $row['driver_contact'];
             $this->status = $row['status'];
-            $this->destination = $row['destination'];
-            $this->departure = $row['departure'];
             $this->created_at = $row['created_at'];
-            return $this;
+            return true;
         }
         return false; // Return false if no record is found
     }
 
-    // Update a ticket
+    // Update a vehicle
     public function update() {
-        $query = "UPDATE tickets SET ticket_id = ?, vehicle_id = ?, emergency_contact = ?, status = ?, destination = ?, departure = ?, WHERE id = ?";
+        $query = "UPDATE vehicles SET vehicle_number = ?, capacity = ?, driver_name = ?, driver_contact = ?, status = ? WHERE id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssssssssi", $this->ticket_id, $this->vehicle_id, $this->emergency_contact, $this->status, $this->destination, $this->departure, $this->id);
+        $stmt->bind_param("sisssi", $this->vehicle_number, $this->capacity, $this->driver_name, $this->driver_contact, $this->status, $this->id);
         return $stmt->execute();
     }
 
-    // Delete a ticket (soft delete)
+    // Delete a vehicle (soft delete)
     public function delete() {
-        $query = "UPDATE tickets SET deleted_at = NOW() WHERE id = ?";
+        $query = "UPDATE vehicles SET deleted_at = NOW() WHERE id = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $this->id);
         return $stmt->execute();

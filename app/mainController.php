@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $passenger->gender = $_POST['gender'] ?? "Human";
       $passenger->age = $_POST['age'];
       $passenger->gender = $_POST['gender'];
+      $passenger->vehicle_id = $_POST['vehicle_id'];
       $passenger->emergency_number = $_POST['emergency_contact'];
       $passenger->first_contact_number = $_POST['first_contact_number'];
       

@@ -38,6 +38,19 @@
       <option value="female">Female</option>
      </select>
    </label>
+
+   <label class="form-label-wrapper">
+     <p class="form-label">Select Vehicle</p>
+     <select class="form-input"  name="gender">
+      <?php
+        $vehicles = [];
+        foreach ($vehicles as $vehicle) {
+           echo"<option value=" . $vehicle->id . ">" . $vehicle->name . "</option>";
+        }
+      ?>
+     </select>
+   </label>
+
    <label class="form-label-wrapper">
      <p class="form-label">Address</p>
      <input class="form-input" type="text" name="address" placeholder="Enter your password" required>

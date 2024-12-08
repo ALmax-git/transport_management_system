@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `vehicles`
+--
+
+CREATE TABLE `vehicles` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(222) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `vehicle_number` varchar(222) NOT NULL,
+  `capacity` varchar(222) NOT NULL,
+  `model` varchar(222) NOT NULL,
+  `driver_name` varchar(222) NOT NULL,
+  `driver_contact` varchar(222) DEFAULT NULL,
+  `seat_count` int(10) DEFAULT 0,
+  `trip` int(10) DEFAULT 0,
+  `status` varchar(222) DEFAULT "Active"
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Table structure for table `passengers`
 --
 

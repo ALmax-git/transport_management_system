@@ -6,7 +6,7 @@ class Ticket {
     // Properties 	 	 	 	 	 	
     public $id;
     public $ticket_id = "";
-    public $vehicle_id = '';
+    public $vehicle_id;
     public $emergency_contact;
     public $status;
     public $created_at ;
