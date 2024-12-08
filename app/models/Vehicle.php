@@ -21,28 +21,28 @@ class Vehicle {
     }
 
     // Create a new vehicle
-    public function create() {
-        $query = "INSERT INTO vehicles
-                  (vehicle_number, capacity, driver_name, driver_contact, status)
-                  VALUES
-                  (?, ?, ?, ?, ?)";
+    // public function create() {
+    //     $query = "INSERT INTO vehicles
+    //               (vehicle_number, capacity, driver_name, driver_contact, status)
+    //               VALUES
+    //               (?, ?, ?, ?, ?)";
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param(
-            "sisss",
-            $this->vehicle_number,
-            $this->capacity,
-            $this->driver_name,
-            $this->driver_contact,
-            $this->status
-        );
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->bind_param(
+    //         "sisss",
+    //         $this->vehicle_number,
+    //         $this->capacity,
+    //         $this->driver_name,
+    //         $this->driver_contact,
+    //         $this->status
+    //     );
 
-        if ($stmt->execute()) {
-            return true;
-        }
+    //     if ($stmt->execute()) {
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
     // Read all vehicles
     public function read() {
@@ -74,20 +74,20 @@ class Vehicle {
         return false; // Return false if no record is found
     }
 
-    // Update a vehicle
-    public function update() {
-        $query = "UPDATE vehicles SET vehicle_number = ?, capacity = ?, driver_name = ?, driver_contact = ?, status = ? WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("sisssi", $this->vehicle_number, $this->capacity, $this->driver_name, $this->driver_contact, $this->status, $this->id);
-        return $stmt->execute();
-    }
+    // // Update a vehicle
+    // public function update() {
+    //     $query = "UPDATE vehicles SET vehicle_number = ?, capacity = ?, driver_name = ?, driver_contact = ?, status = ? WHERE id = ?";
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->bind_param("sisssi", $this->vehicle_number, $this->capacity, $this->driver_name, $this->driver_contact, $this->status, $this->id);
+    //     return $stmt->execute();
+    // }
 
-    // Delete a vehicle (soft delete)
-    public function delete() {
-        $query = "UPDATE vehicles SET deleted_at = NOW() WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $this->id);
-        return $stmt->execute();
-    }
+    // // Delete a vehicle (soft delete)
+    // public function delete() {
+    //     $query = "UPDATE vehicles SET deleted_at = NOW() WHERE id = ?";
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->bind_param("i", $this->id);
+    //     return $stmt->execute();
+    // }
 }
 ?>
