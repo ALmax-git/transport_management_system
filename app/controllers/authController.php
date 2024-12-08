@@ -13,12 +13,12 @@ $pdo = $database->pdo_connect();
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
 
     if (isset($_POST['register'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
         // Registration logic
-        $confirm_password = trim($_POST['confirm_password']);
+        $confirm_password = $_POST['confirm_password'];
 
         if ($password !== $confirm_password) {
             $error = "Passwords do not match!";
@@ -43,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } elseif (isset($_POST['login'])) {
         // Login logic
+    $email = $_POST['email'];
+    $password = $_POST['password'];
      
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
@@ -59,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }elseif (isset($_POST['logout'])){
        session_unset();
+       header("Location: ../../");
     }
 }
 ?>

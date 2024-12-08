@@ -28,7 +28,7 @@
     <body class="index-page">
         <?php include './components/header.php'; ?>
         <main class="main">
-            <?php include './components/search.php'; ?>
+            
 
 <?php if(isset($_GET['about']) && $_GET['about'] == "true"): ?>
     <!-- About Section -->
@@ -258,6 +258,8 @@
     </section><!-- /Contact Section -->
 
 <?php else: ?> 
+
+            <?php include './components/search.php'; ?>
             <!-- Featured Services Section -->
             <section id="featured-services" class="featured-services section">
 
