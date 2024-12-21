@@ -30,22 +30,19 @@
                     <h2 class="main-title">Dashboard</h2>
                     <div class="row">
                         <?php
-                           if(isset($_GET['routes'])){
-                             include './components/dashboard/route.php';
-                             //echo 1;
-                           }
-                           elseif(isset($_GET['passengers'])){
-                             include './components/dashboard/passenger.php';
-                             //echo 2;
-                           }
-                           elseif(isset($_GET['tickets']) || isset($_GET['ticket'])){
-                             include './components/dashboard/ticket.php';
-                             //echo 2;
-                           }
-                           else{
-                             include './components/dashboard/index.php';
-                             //echo 3;
-                           }
+                        if (isset($_GET['routes'])) {
+                            include './components/dashboard/route.php';
+                            //echo 1;
+                        } elseif (isset($_GET['passengers'])) {
+                            include './components/dashboard/passenger.php';
+                            //echo 2;
+                        } elseif (isset($_GET['tickets']) || isset($_GET['ticket'])) {
+                            include './components/dashboard/ticket.php';
+                            //echo 2;
+                        } else {
+                            include './components/dashboard/index.php';
+                            //echo 3;
+                        }
                         ?>
                     </div>
                 </div>
@@ -53,7 +50,7 @@
             <!-- ! Footer -->
             <footer class="footer">
                 <div class="container">
-                    &COPY; Copyright 2024 <a href="#">ALmax</a> | Created by <a href="https://github.com/ALmax-git"
+                    &COPY; Copyright 2024 <a href="#">Legend</a> | Created by <a href="https://github.com/ALmax-git"
                         target="_blank">ALmax Team</a><br>
                 </div>
             </footer>

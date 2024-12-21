@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Index - Borno Express</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Index - Borno Express</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <link href="https://fonts.googleapis.com" rel="preconnect">
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-        <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-        <!-- Main CSS File -->
-        <link href="assets/css/main.css" rel="stylesheet">
-    </head>
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
 
-    <body class="index-page">
-        <?php include './components/header.php'; ?>
-        <main class="main">
-            
+<body class="index-page">
+    <?php include './components/header.php'; ?>
+    <main class="main">
 
-<?php if(isset($_GET['about']) && $_GET['about'] == "true"): ?>
-    <!-- About Section -->
+
+        <?php if (isset($_GET['about']) && $_GET['about'] == "true"): ?>
+            <!-- About Section -->
             <section id="about" class="about section">
 
                 <div class="container">
@@ -182,82 +182,82 @@
 
 
             </section><!-- /Services Section -->
-            
-<?php elseif(isset($_GET['contact']) && $_GET['contact'] == "true"): ?>
- <!-- Contact Section -->
-    <section id="contact" class="contact section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <?php elseif (isset($_GET['contact']) && $_GET['contact'] == "true"): ?>
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
 
-     
-        <div class="row gy-4">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Borno Express Maiduguri Borno state</p>
-              </div>
-            </div><!-- End Info Item -->
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+23481 6514 1519</p>
-              </div>
-            </div><!-- End Info Item -->
+                    <div class="row gy-4">
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>contact@bornoexpress.com</p>
-              </div>
-            </div><!-- End Info Item -->
+                        <div class="col-lg-4">
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>Borno Express Maiduguri Borno state</p>
+                                </div>
+                            </div><!-- End Info Item -->
 
-          </div>
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+23481 6514 1519</p>
+                                </div>
+                            </div><!-- End Info Item -->
 
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>contact@bornoexpress.com</p>
+                                </div>
+                            </div><!-- End Info Item -->
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                        </div>
+
+                        <div class="col-lg-8">
+                            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                                <div class="row gy-4">
+
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                                    </div>
+
+                                    <div class="col-md-6 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                    </div>
+
+                                    <div class="col-md-12 text-center">
+                                        <div class="loading">Loading</div>
+                                        <div class="error-message"></div>
+                                        <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div><!-- End Contact Form -->
+
+                    </div>
+
                 </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
+            </section><!-- /Contact Section -->
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-<?php else: ?> 
+        <?php else: ?>
 
             <?php include './components/search.php'; ?>
             <!-- Featured Services Section -->
@@ -304,66 +304,206 @@
                         <!-- End Service Item -->
 
                     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<style>
-  .status-green {
-      background-color: green;
-      color: white;
-      cursor: pointer;
-  }
-  .status-red {
-      background-color: red;
-      color: white;
-      cursor: pointer;
-  }
-</style>
-<table class="table table-striped table-bordered" id="hospitalTable">
-   <thead class="table-primary">
-       <tr>
-           <th>ID</th>
-           <th>Name</th>
-           <th>Departure</th>
-           <th>Destination</th>
-           <th>Status</th>
-           <th>Comments</th>
-       </tr>
-   </thead>
-   <tbody id="tableBody">
-       <!-- Rows will be dynamically generated -->
-   </tbody>
-</table>
-    <script>
-        // Define 20 routes in an array
-        const routes = [
-            { id: 1, name: "Route 1", departure: "Borno Express", destination: "Kano", status: "Available", comments: "Good service" },
-            { id: 2, name: "Route 2", departure: "Borno Express", destination: "Damaturu", status: "Not Available", comments: "Temporarily suspended" },
-            { id: 3, name: "Route 3", departure: "Borno Express", destination: "Wudil", status: "Available", comments: "On schedule" },
-            { id: 4, name: "Route 4", departure: "Borno Express", destination: "Katsina", status: "Available", comments: "Safe and secure" },
-            { id: 5, name: "Route 5", departure: "Borno Express", destination: "Gombe", status: "Not Available", comments: "Maintenance required" },
-            { id: 6, name: "Route 6", departure: "Borno Express", destination: "Zamfara", status: "Available", comments: "Popular route" },
-            { id: 7, name: "Route 7", departure: "Borno Express", destination: "Bauchi", status: "Not Available", comments: "Road repairs ongoing" },
-            { id: 8, name: "Route 8", departure: "Borno Express", destination: "Azare", status: "Available", comments: "Reliable service" },
-            { id: 9, name: "Route 9", departure: "Borno Express", destination: "Kano", status: "Available", comments: "Fast and efficient" },
-            { id: 10, name: "Route 10", departure: "Borno Express", destination: "Sokoto", status: "Not Available", comments: "No recent trips" },
-            { id: 11, name: "Route 11", departure: "Borno Express", destination: "Kaduna", status: "Available", comments: "Well-maintained" },
-            { id: 12, name: "Route 12", departure: "Borno Express", destination: "Abuja", status: "Available", comments: "Customer favorite" },
-            { id: 13, name: "Route 13", departure: "Borno Express", destination: "Patiskum", status: "Available", comments: "Great experience" },
-            { id: 14, name: "Route 14", departure: "Borno Express", destination: "Jos", status: "Not Available", comments: "Weather issues" },
-            { id: 15, name: "Route 15", departure: "Borno Express", destination: "Yola", status: "Available", comments: "Smooth trip" },
-            { id: 16, name: "Route 16", departure: "Borno Express", destination: "Bauchi", status: "Available", comments: "Frequent departures" },
-            { id: 17, name: "Route 17", departure: "Borno Express", destination: "Jigawa", status: "Available", comments: "High demand" },
-            { id: 18, name: "Route 18", departure: "Borno Express", destination: "Zamfara", status: "Not Available", comments: "Driver shortage" },
-            { id: 19, name: "Route 19", departure: "Borno Express", destination: "Kaduna", status: "Available", comments: "Reliable service" },
-            { id: 20, name: "Route 20", departure: "Borno Express", destination: "Zariya", status: "Not Available", comments: "Low patronage" }
-        ];
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+                    <style>
+                        .status-green {
+                            background-color: green;
+                            color: white;
+                            cursor: pointer;
+                        }
 
-        // Populate table with routes
-        function populateTable() {
-            const tableBody = document.getElementById("tableBody");
-            tableBody.innerHTML = ""; // Clear table body
-            routes.forEach(route => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
+                        .status-red {
+                            background-color: red;
+                            color: white;
+                            cursor: pointer;
+                        }
+                    </style>
+                    <table class="table table-striped table-bordered" id="hospitalTable">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Departure</th>
+                                <th>Destination</th>
+                                <th>Status</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Rows will be dynamically generated -->
+                        </tbody>
+                    </table>
+                    <script>
+                        // Define 20 routes in an array
+                        const routes = [{
+                                id: 1,
+                                name: "Route 1",
+                                departure: "Borno Express",
+                                destination: "Kano",
+                                status: "Available",
+                                comments: "Good service"
+                            },
+                            {
+                                id: 2,
+                                name: "Route 2",
+                                departure: "Borno Express",
+                                destination: "Damaturu",
+                                status: "Not Available",
+                                comments: "Temporarily suspended"
+                            },
+                            {
+                                id: 3,
+                                name: "Route 3",
+                                departure: "Borno Express",
+                                destination: "Wudil",
+                                status: "Available",
+                                comments: "On schedule"
+                            },
+                            {
+                                id: 4,
+                                name: "Route 4",
+                                departure: "Borno Express",
+                                destination: "Katsina",
+                                status: "Available",
+                                comments: "Safe and secure"
+                            },
+                            {
+                                id: 5,
+                                name: "Route 5",
+                                departure: "Borno Express",
+                                destination: "Gombe",
+                                status: "Not Available",
+                                comments: "Maintenance required"
+                            },
+                            {
+                                id: 6,
+                                name: "Route 6",
+                                departure: "Borno Express",
+                                destination: "Zamfara",
+                                status: "Available",
+                                comments: "Popular route"
+                            },
+                            {
+                                id: 7,
+                                name: "Route 7",
+                                departure: "Borno Express",
+                                destination: "Bauchi",
+                                status: "Not Available",
+                                comments: "Road repairs ongoing"
+                            },
+                            {
+                                id: 8,
+                                name: "Route 8",
+                                departure: "Borno Express",
+                                destination: "Azare",
+                                status: "Available",
+                                comments: "Reliable service"
+                            },
+                            {
+                                id: 9,
+                                name: "Route 9",
+                                departure: "Borno Express",
+                                destination: "Kano",
+                                status: "Available",
+                                comments: "Fast and efficient"
+                            },
+                            {
+                                id: 10,
+                                name: "Route 10",
+                                departure: "Borno Express",
+                                destination: "Sokoto",
+                                status: "Not Available",
+                                comments: "No recent trips"
+                            },
+                            {
+                                id: 11,
+                                name: "Route 11",
+                                departure: "Borno Express",
+                                destination: "Kaduna",
+                                status: "Available",
+                                comments: "Well-maintained"
+                            },
+                            {
+                                id: 12,
+                                name: "Route 12",
+                                departure: "Borno Express",
+                                destination: "Abuja",
+                                status: "Available",
+                                comments: "Customer favorite"
+                            },
+                            {
+                                id: 13,
+                                name: "Route 13",
+                                departure: "Borno Express",
+                                destination: "Patiskum",
+                                status: "Available",
+                                comments: "Great experience"
+                            },
+                            {
+                                id: 14,
+                                name: "Route 14",
+                                departure: "Borno Express",
+                                destination: "Jos",
+                                status: "Not Available",
+                                comments: "Weather issues"
+                            },
+                            {
+                                id: 15,
+                                name: "Route 15",
+                                departure: "Borno Express",
+                                destination: "Yola",
+                                status: "Available",
+                                comments: "Smooth trip"
+                            },
+                            {
+                                id: 16,
+                                name: "Route 16",
+                                departure: "Borno Express",
+                                destination: "Bauchi",
+                                status: "Available",
+                                comments: "Frequent departures"
+                            },
+                            {
+                                id: 17,
+                                name: "Route 17",
+                                departure: "Borno Express",
+                                destination: "Jigawa",
+                                status: "Available",
+                                comments: "High demand"
+                            },
+                            {
+                                id: 18,
+                                name: "Route 18",
+                                departure: "Borno Express",
+                                destination: "Zamfara",
+                                status: "Not Available",
+                                comments: "Driver shortage"
+                            },
+                            {
+                                id: 19,
+                                name: "Route 19",
+                                departure: "Borno Express",
+                                destination: "Kaduna",
+                                status: "Available",
+                                comments: "Reliable service"
+                            },
+                            {
+                                id: 20,
+                                name: "Route 20",
+                                departure: "Borno Express",
+                                destination: "Zariya",
+                                status: "Not Available",
+                                comments: "Low patronage"
+                            }
+                        ];
+
+                        // Populate table with routes
+                        function populateTable() {
+                            const tableBody = document.getElementById("tableBody");
+                            tableBody.innerHTML = ""; // Clear table body
+                            routes.forEach(route => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `
                     <td>${route.id}</td>
                     <td>${route.name}</td>
                     <td>${route.departure}</td>
@@ -374,23 +514,23 @@
                     </td>
                     <td>${route.comments}</td>
                 `;
-                tableBody.appendChild(row);
-            });
-        }
+                                tableBody.appendChild(row);
+                            });
+                        }
 
-        // Filter table rows based on search input
-        document.getElementById('searchInput').addEventListener('keyup', function () {
-            let filter = this.value.toLowerCase();
-            const filteredRoutes = routes.filter(route =>
-                route.name.toLowerCase().includes(filter) ||
-                route.departure.toLowerCase().includes(filter) ||
-                route.destination.toLowerCase().includes(filter)
-            );
-            const tableBody = document.getElementById("tableBody");
-            tableBody.innerHTML = ""; // Clear table body
-            filteredRoutes.forEach(route => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
+                        // Filter table rows based on search input
+                        document.getElementById('searchInput').addEventListener('keyup', function() {
+                            let filter = this.value.toLowerCase();
+                            const filteredRoutes = routes.filter(route =>
+                                route.name.toLowerCase().includes(filter) ||
+                                route.departure.toLowerCase().includes(filter) ||
+                                route.destination.toLowerCase().includes(filter)
+                            );
+                            const tableBody = document.getElementById("tableBody");
+                            tableBody.innerHTML = ""; // Clear table body
+                            filteredRoutes.forEach(route => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `
                     <td>${route.id}</td>
                     <td>${route.name}</td>
                     <td>${route.departure}</td>
@@ -401,27 +541,27 @@
                     </td>
                     <td>${route.comments}</td>
                 `;
-                tableBody.appendChild(row);
-            });
-        });
+                                tableBody.appendChild(row);
+                            });
+                        });
 
-        // Show SweetAlert popup for status details
-        function showDetails(route, status, details) {
-            swal({
-                title: `Details for ${route}`,
-                text: `Status: ${status}\nDetails: ${details}`,
-                icon: status === 'Available' ? 'success' : 'error',
-            });
-        }
+                        // Show SweetAlert popup for status details
+                        function showDetails(route, status, details) {
+                            swal({
+                                title: `Details for ${route}`,
+                                text: `Status: ${status}\nDetails: ${details}`,
+                                icon: status === 'Available' ? 'success' : 'error',
+                            });
+                        }
 
-        // Initialize table
-        populateTable();
-    </script>
+                        // Initialize table
+                        populateTable();
+                    </script>
                 </div>
 
             </section><!-- /Featured Services Section -->
 
-        
+
             <!-- Call To Action Section -->
             <!-- Call To Action Section -->
             <section id="call-to-action" class="call-to-action section dark-background">
@@ -525,32 +665,32 @@
                 </div>
 
             </section><!-- /Faq Section -->
-<?php endif; ?>
+        <?php endif; ?>
 
-        </main>
+    </main>
 
-        <?php
-  include './components/footer.php';
-  ?>
+    <?php
+    include './components/footer.php';
+    ?>
 
-        <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-        <!-- Preloader -->
-        <div id="preloader"></div>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-        <!-- Vendor JS Files -->
-        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/vendor/php-email-form/validate.js"></script>
-        <script src="assets/vendor/aos/aos.js"></script>
-        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-        <!-- Main JS File -->
-        <script src="assets/js/main.js"></script>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-    </body>
+</body>
 
 </html>
