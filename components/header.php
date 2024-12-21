@@ -7,10 +7,10 @@
 
           <nav id="navmenu" class="navmenu">
               <ul>
-                  <li><a href="./" class="active">Home<br></a></li>
-                  <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#open_manipest">Manifest</a></li>
-                  <li><a href="./?about=true">About</a></li>
-                  <li><a href="./?contact=true">Contact</a></li>
+                  <li><a href="./" class="<?php echo $_GET['web'] == "search" ? "active" : ""; ?>">Home<br></a></li>
+                  <li><a class="<?php echo $_GET['web'] == "search" ? "active" : ""; ?>" href="#" type="button" data-bs-toggle="modal" data-bs-target="#open_manipest">Manifest</a></li>
+                  <li><a class="<?php echo $_GET['about'] == "true" ? "active" : ""; ?>" href="./?about=true">About</a></li>
+                  <li><a class="<?php echo $_GET['contact'] == "true" ? "active" : ""; ?>" href="./?contact=true">Contact</a></li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
